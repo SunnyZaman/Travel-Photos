@@ -11,7 +11,7 @@ if (isset($_POST["sub"])) {
     else $_SESSION["login"] = true;
 }
 if ($validUser) {
-    header("Location: /admin.php");
+    header("Location: admin.php");
     die();
 }
 ?>
