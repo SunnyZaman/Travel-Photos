@@ -1,5 +1,5 @@
 <?php
-
+include('travel-data-class.php');
 session_start(); /* Starts the session */
 
 // if($_SESSION['Active'] == false){ /* Redirects user to Login.php if not logged in */
@@ -20,11 +20,6 @@ if (isset($_POST["logout"])) {
     <title>Plan Your Travel</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <?php
-include('travel-data-class.php');
-
-?>
 </head>
 
 
@@ -91,14 +86,7 @@ include('travel-data-class.php');
 </div>
 <script>
  $(document).ready(function(){
-var imagesArr =[
-	"images/cntower1.jpg",
-	"images/eiffel1.jpg",
-	"images/sphinx1.jpg",
-	"images/pisa1.jpg",	
-    "images/tajMahal1.JPG",	
-	];
-var namesArr =[
+var placesArray =[
 	'<?php echo "$images[0]"?>',
 	'<?php echo "$images[1]"?>',
 	'<?php echo "$images[2]"?>',
@@ -107,7 +95,7 @@ var namesArr =[
 	];
 $('#popularPlaces').change(function(){
     $('#container').html("");
-    $('#container').append(namesArr[this.value]);
+    $('#container').append(placesArray[this.value]);
   });
  });
 </script>
